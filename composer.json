@@ -1,0 +1,75 @@
+{
+    "name": "codicastudio/scout-extended",
+    "description": "A noobs worthless garbage, just learning.",
+    "keywords": [
+        "worthless garabage by a noob."
+    ],
+    "homepage": "https://github.com/codicastudio/scout-extended",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael J Brown",
+            "email": "codicastudiodev@gmail.com",
+            "homepage": "https://codicastudio.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "algolia/codicastudiosearch-client-php": "^2.5.1",
+        "illuminate/console": "^6.0|^7.0",
+        "illuminate/contracts": "^6.0|^7.0",
+        "illuminate/database": "^6.0|^7.0",
+        "illuminate/filesystem": "^6.0|^7.0",
+        "illuminate/support": "^6.0|^7.0",
+        "laravel/scout": "^8.0",
+        "riimu/kit-phpencoder": "^2.4"
+    },
+    "suggest": {
+        "ext-dom": "Required to use the HTML Splitter."
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.8",
+        "mockery/mockery": "^1.1",
+        "nunomaduro/larastan": "^0.5",
+        "orchestra/testbench": "^4.0|^5.0",
+        "phpstan/phpstan": "^0.12.14",
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "App\\": "tests/laravel/app"
+        },
+        "files": [
+            "vendor/mockery/mockery/library/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "codicastudio\\ScoutExtended\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "codicastudio\\ScoutExtended\\ScoutExtendedServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "phpstan:test": "phpstan analyse --ansi --memory-limit=-1",
+        "phpunit:test": "phpunit --colors=always",
+        "test": [
+            "@phpstan:test",
+            "@phpunit:test"
+        ]
+    }
+}
